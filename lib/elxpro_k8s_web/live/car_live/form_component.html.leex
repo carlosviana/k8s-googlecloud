@@ -1,0 +1,22 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "car-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :brand %>
+  <%= text_input f, :brand %>
+  <%= error_tag f, :brand %>
+
+  <%= label f, :description %>
+  <%= text_input f, :description %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :license_plate %>
+  <%= text_input f, :license_plate %>
+  <%= error_tag f, :license_plate %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>
